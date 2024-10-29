@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pretam Ray</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --background: #ffffff;
+            --surface: #f8fafc;
+            --border: #e5e7eb;
+            --hover: #f1f5f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--background);
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            padding: 80px 0 40px;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .name {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .title {
+            font-size: 1.125rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .contact {
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            padding: 16px 0;
+            background: var(--background);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            padding: 6px 0;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.2s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        section {
+            margin: 64px 0;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: var(--text);
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .paper-title {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .authors {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .venue {
+            font-size: 0.875rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .experience-title {
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .experience-meta {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+
+        .education-item {
+            margin-bottom: 24px;
+        }
+
+        .education-title {
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+
+        .education-details {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .social-links a {
+            color: var(--text-light);
+            font-size: 1.25rem;
+            transition: color 0.2s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+        }
+
+        .bio {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--text-light);
+            font-size: 1.125rem;
+            line-height: 1.7;
+        }
+
+        footer {
+            text-align: center;
+            padding: 48px 0;
+            color: var(--text-light);
+            font-size: 0.875rem;
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 640px) {
+            .name {
+                font-size: 2rem;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+                padding: 16px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="profile">
+                <h1 class="name">Pretam Ray</h1>
+                <div class="title">M.S. Student in Computer Science</div>
+                <div class="contact">
+                    IIT Kharagpur • pretamroy309@gmail.com
+                </div>
+                <div class="social-links">
+                    <a href="https://scholar.google.com/citations?user=5eQgpf8AAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://www.linkedin.com/in/your-profile" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:pretamroy309@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#publications">Publications</a>
+        <a href="#research">Research</a>
+        <a href="#education">Education</a>
+    </nav>
+
+    <main class="container">
+        <section id="about">
+            <p class="bio">
+                I'm a Computer Science researcher at IIT Kharagpur, specializing in Natural Language Processing and Deep Learning. My current research focuses on developing innovative solutions for Indian language translation.
+            </p>
+        </section>
+
+        <section id="publications">
+            <h2>Publications</h2>
+            <div class="card">
+                <div class="paper-title">Enhancing Low-Resource NMT with a Multilingual Encoder and Knowledge Distillation: A Case Study</div>
+                <div class="authors">Aniruddha Roy, Pretam Ray, Ayush Maheshwari, Sudeshna Sarkar, Pawan Goyal</div>
+                <div class="venue">LoresMT 2024 @ACL</div>
+            </div>
+        </section>
+
+        <section id="research">
+            <h2>Research Experience</h2>
+            <div class="card">
+                <div class="experience-title">Junior Research Fellow</div>
+                <div class="experience-meta">IIT Kharagpur • July 2022 - Present</div>
+                <p>Working on text-to-text translation among Indian languages using Sanskrit-based Interlingua representation under the NLTM: BHASHINI project.</p>
+            </div>
+            <div class="card">
+                <div class="experience-title">Research Intern</div>
+                <div class="experience-meta">Carabiner Technologies • Summer 2020</div>
+                <p>Implemented EfficientNet Models for image classification and developed BERT-based sentiment analysis systems.</p>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="card education-item">
+                <div class="education-title">M.S. in Computer Science</div>
+                <div class="education-details">Indian Institute of Technology, Kharagpur</div>
+                <div class="education-details">2023 - Present • CGPA: 8.25/10</div>
+            </div>
+            <div class="card education-item">
+                <div class="education-title">B.Tech in Computer Science</div>
+                <div class="education-details">Indian Institute of Engineering Science and Technology, Shibpur</div>
+                <div class="education-details">2018 - 2022 • CGPA: 8.37/10</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        © 2024 Pretam Ray • All Rights Reserved
+    </footer>
+</body>
+</html>
