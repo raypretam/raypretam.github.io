@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https:/pretamray.github.io/al-folio/sitemap.xml
+Sitemap: https:/pretamray.github.io/sitemap.xml
