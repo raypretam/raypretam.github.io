@@ -18,7 +18,7 @@ function determineGiscusTheme() {
 
   let giscusAttributes = {
     src: "https://giscus.app/client.js",
-    "data-repo": "raypretam/pretamray.github.io",
+    "data-repo": "raypretam/raypretam.github.io",
     "data-repo-id": "",
     "data-category": "Comments",
     "data-category-id": "",
