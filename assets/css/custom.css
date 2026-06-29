@@ -1,0 +1,370 @@
+/* ============================================================
+   raypretam.github.io – Custom Aesthetic Theme
+   Indigo / Violet palette, Inter font, refined shadows
+   ============================================================ */
+
+:root {
+  --pr:      #4f46e5;   /* indigo-600 */
+  --pr-l:    #818cf8;   /* indigo-400 */
+  --pr-d:    #3730a3;   /* indigo-800 */
+  --ac:      #7c3aed;   /* violet-600 */
+  --grad:    linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  --bg:      #f1f5f9;   /* slate-100  */
+  --text:    #1e293b;   /* slate-800  */
+  --muted:   #64748b;   /* slate-500  */
+  --card-sh: 0 1px 4px rgba(0,0,0,0.05), 0 6px 24px rgba(79,70,229,0.09);
+}
+
+/* ---------- Base ---------- */
+body {
+  background-color: var(--bg) !important;
+  color: var(--text);
+  font-family: 'Inter', 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: var(--text);
+}
+
+html { scroll-behavior: smooth; }
+
+/* ---------- Navbar ---------- */
+.navbar {
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(22px) !important;
+  -webkit-backdrop-filter: blur(22px) !important;
+  border-bottom: 1px solid rgba(79, 70, 229, 0.13) !important;
+  box-shadow: 0 1px 18px rgba(79, 70, 229, 0.07) !important;
+}
+
+.navbar-brand strong {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.navbar .nav-link {
+  color: var(--text) !important;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  padding-bottom: 0.25rem !important;
+  position: relative;
+  transition: color 0.18s;
+}
+
+.navbar .nav-link::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0.55rem;
+  right: 0.55rem;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--grad);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-item.active .nav-link {
+  color: var(--pr) !important;
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-item.active .nav-link::after {
+  transform: scaleX(1);
+}
+
+/* ---------- Cards (global) ---------- */
+.card {
+  box-shadow: var(--card-sh) !important;
+  border: none !important;
+  background: #ffffff;
+  transition: box-shadow 0.2s;
+}
+
+/* ---------- Profile Sidebar Card ---------- */
+.sticky-top > .col > .card {
+  border-top: 3px solid var(--pr) !important;
+}
+
+/* Profile photo — desktop: make circular & centered */
+.sticky-top .figure-img.img-fluid {
+  border-radius: 50% !important;
+  max-width: 78%;
+  margin: 0 auto 0.5rem;
+  display: block;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 3px solid var(--pr-l) !important;
+  box-shadow: 0 0 0 5px rgba(79, 70, 229, 0.12),
+              0 6px 28px rgba(79, 70, 229, 0.2) !important;
+}
+
+/* Profile photo — mobile (rounded-circle already set inline) */
+.sticky-top .rounded-circle {
+  border: 3px solid var(--pr-l) !important;
+  box-shadow: 0 0 0 5px rgba(79, 70, 229, 0.12) !important;
+}
+
+/* Social icon links */
+.sticky-top .card a {
+  color: var(--muted) !important;
+  transition: color 0.18s, transform 0.18s;
+  display: inline-block;
+}
+
+.sticky-top .card a:hover {
+  color: var(--pr) !important;
+  transform: scale(1.18);
+  text-decoration: none;
+}
+
+/* Name */
+.sticky-top .card .h4 {
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+/* Position text */
+.sticky-top .card .small {
+  color: var(--muted);
+}
+
+/* ---------- "About Me" heading ---------- */
+.card-body .h3 {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- Experience / Education / Awards section headings ---------- */
+.card-body h6 {
+  color: var(--pr);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid rgba(79, 70, 229, 0.15);
+  margin-bottom: 0.65rem;
+}
+
+/* Row hover in lists */
+.card-body ul.list-unstyled li.media {
+  padding: 0.3rem 0.4rem;
+  border-radius: 0.4rem;
+  transition: background 0.15s;
+}
+
+.card-body ul.list-unstyled li.media:hover {
+  background: rgba(79, 70, 229, 0.04);
+}
+
+/* ---------- News card items ---------- */
+.card-body li.news-item,
+.card-body .list-group-flush li {
+  border-left: 3px solid var(--pr-l);
+  padding-left: 0.75rem;
+}
+
+/* ---------- Publication badge ---------- */
+.badge-success {
+  background: var(--grad) !important;
+  color: #fff !important;
+}
+
+.badge-publication {
+  border-radius: 0.4rem !important;
+}
+
+/* ---------- Links ---------- */
+a {
+  color: var(--pr);
+  transition: color 0.15s;
+}
+
+a:hover {
+  color: var(--ac);
+  text-decoration: none;
+}
+
+.email-text {
+  color: var(--pr) !important;
+}
+
+/* ---------- Footer ---------- */
+footer.footer {
+  background: linear-gradient(90deg, #f5f7ff 0%, var(--bg) 100%) !important;
+  border-top-color: rgba(79, 70, 229, 0.13) !important;
+  color: var(--muted);
+}
+
+footer.footer a {
+  color: var(--muted);
+}
+
+footer.footer a:hover {
+  color: var(--pr);
+}
+
+/* ---------- Text muted override ---------- */
+.text-muted {
+  color: var(--muted) !important;
+}
+
+/* ---------- Visitor badge ---------- */
+.visitor-badge {
+  height: 20px;
+  border-radius: 4px;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+.visitor-badge:hover { opacity: 1; }
+
+/* ============================================================
+   Dark Mode Toggle Button
+   ============================================================ */
+#dark-toggle {
+  background: none;
+  border: 1.5px solid rgba(79, 70, 229, 0.3);
+  border-radius: 0.5rem;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0.22rem 0.6rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-left: 0.75rem;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+#dark-toggle:hover {
+  background: rgba(79, 70, 229, 0.08);
+  color: var(--pr);
+  border-color: var(--pr);
+}
+
+/* ============================================================
+   Dark Mode — full theme
+   ============================================================ */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body,
+html.dark .bg-light {
+  background-color: #0f172a !important;
+  color: #e2e8f0;
+}
+
+html.dark .card,
+html.dark .bg-white {
+  background: #1e293b !important;
+  color: #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4), 0 8px 28px rgba(0,0,0,0.3) !important;
+}
+
+/* Navbar */
+html.dark .navbar {
+  background: rgba(15, 23, 42, 0.96) !important;
+  border-bottom-color: rgba(79, 70, 229, 0.22) !important;
+  box-shadow: 0 1px 20px rgba(0,0,0,0.5) !important;
+}
+
+html.dark .navbar .nav-link {
+  color: #cbd5e1 !important;
+}
+html.dark .navbar .nav-link:hover,
+html.dark .navbar .nav-item.active .nav-link {
+  color: #818cf8 !important;
+}
+
+/* Dark toggle button in dark mode */
+html.dark #dark-toggle {
+  color: #818cf8;
+  border-color: rgba(129, 140, 248, 0.4);
+}
+html.dark #dark-toggle:hover {
+  background: rgba(79, 70, 229, 0.25);
+  color: #fff;
+  border-color: #818cf8;
+}
+
+/* Headings */
+html.dark h1, html.dark h2, html.dark h3,
+html.dark h4, html.dark h5, html.dark h6,
+html.dark .h1, html.dark .h2, html.dark .h3,
+html.dark .h4, html.dark .h5, html.dark .h6 {
+  color: #e2e8f0;
+}
+
+/* Section sub-headings (uppercase h6 inside cards) */
+html.dark .card-body h6 {
+  color: #818cf8;
+  border-bottom-color: rgba(129, 140, 248, 0.2);
+}
+
+/* About Me gradient heading — lighter in dark mode */
+html.dark .card-body .h3 {
+  background: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Profile sidebar */
+html.dark .sticky-top > .col > .card {
+  border-top-color: #818cf8 !important;
+}
+html.dark .sticky-top .card a {
+  color: #64748b !important;
+}
+html.dark .sticky-top .card a:hover {
+  color: #818cf8 !important;
+}
+html.dark .sticky-top .figure-img.img-fluid {
+  border-color: #818cf8 !important;
+  box-shadow: 0 0 0 5px rgba(129,140,248,0.15), 0 6px 28px rgba(0,0,0,0.4) !important;
+}
+
+/* List hover */
+html.dark .card-body ul.list-unstyled li.media:hover {
+  background: rgba(79, 70, 229, 0.1);
+}
+
+/* Muted text */
+html.dark .text-muted,
+html.dark .small {
+  color: #64748b !important;
+}
+
+/* Links */
+html.dark a { color: #818cf8; }
+html.dark a:hover { color: #a78bfa; }
+html.dark .email-text { color: #818cf8 !important; }
+
+/* Footer */
+html.dark footer.footer {
+  background: linear-gradient(90deg, #1a2340 0%, #0f172a 100%) !important;
+  border-top-color: rgba(79, 70, 229, 0.2) !important;
+  color: #64748b;
+}
+html.dark footer.footer a { color: #64748b; }
+html.dark footer.footer a:hover { color: #818cf8; }
+
+/* Misc */
+html.dark .border-top {
+  border-top-color: rgba(255, 255, 255, 0.07) !important;
+}

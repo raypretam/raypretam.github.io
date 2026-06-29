@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="row pt-2">
-                    <div class="col text-center h4">
+                    <div class="col text-center h4" id="social-icons">
                         {% if site.data.profile.gscholar %}
                         {%- if site.data.profile.gscholar contains 'scholar.google' -%}
                         {%- assign gscholar_url = site.data.profile.gscholar -%}
@@ -86,6 +86,25 @@
                         {% endif %}
                     </div>
                 </div>
+                <!-- Visitor counter badge -->
+                <div class="row pt-2 pb-1">
+                    <div class="col text-center">
+                        <a href="https://hits.seeyoufarm.com" target="_blank" rel="noopener" title="Site visit count">
+                            <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fraypretam.github.io&count_bg=%234f46e5&title_bg=%23334155&icon=&icon_color=%23E7E7E7&title=visitors&edge_flat=true"
+                                 alt="Visitor count" class="visitor-badge" />
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ClustrMaps world map widget
+                     To activate: go to https://clustrmaps.com, add your site URL,
+                     then replace the comment below with your embed code. -->
+                <div class="row pb-2" id="clustrmaps-widget">
+                    <div class="col text-center">
+                        <!-- PASTE CLUSTRMAPS EMBED CODE HERE -->
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
