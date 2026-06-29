@@ -225,14 +225,6 @@ footer.footer a:hover {
   color: var(--muted) !important;
 }
 
-/* ---------- Visitor badge ---------- */
-.visitor-badge {
-  height: 20px;
-  border-radius: 4px;
-  opacity: 0.85;
-  transition: opacity 0.2s;
-}
-.visitor-badge:hover { opacity: 1; }
 
 /* ============================================================
    Dark Mode Toggle Button
