@@ -360,3 +360,88 @@ html.dark footer.footer a:hover { color: #818cf8; }
 html.dark .border-top {
   border-top-color: rgba(255, 255, 255, 0.07) !important;
 }
+
+/* ---- Publications & rounded-xl containers ---- */
+/* publication_card.html and publications.html both use bg-white.rounded-xl
+   without the .card class, so target them explicitly */
+html.dark .rounded-xl,
+html.dark .rounded-xl-top,
+html.dark .rounded-xl-bottom {
+  background: #1e293b !important;
+}
+
+/* Publication item: mobile view has an inline background-color rgba(255,255,255,...)
+   CSS !important overrides inline styles */
+html.dark [style*="background-color: rgba(255,255,255"] {
+  background-color: rgba(30, 41, 59, 0.97) !important;
+}
+
+/* h5 publication titles */
+html.dark .col-md-9 h5,
+html.dark .rounded-xl h5 {
+  color: #e2e8f0 !important;
+}
+
+/* h6 section header inside publication card ("Selected Publications") */
+html.dark .rounded-xl h6,
+html.dark .rounded-xl > h6 {
+  color: #e2e8f0 !important;
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+  background: transparent !important;
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: inherit;
+  font-weight: 600;
+  padding-bottom: inherit;
+}
+
+/* Year headings (h2) on publications page */
+html.dark h2 {
+  color: #e2e8f0;
+}
+
+/* Dividers between publication items */
+html.dark .border-gray,
+html.dark .border-bottom.border-gray {
+  border-color: rgba(255, 255, 255, 0.07) !important;
+}
+
+/* Year nav-pills sidebar on publications page */
+html.dark .nav-pills .nav-link {
+  color: #94a3b8;
+}
+html.dark .nav-pills .nav-link:hover {
+  color: #818cf8;
+  background: rgba(79, 70, 229, 0.1);
+}
+
+/* ---- Mobile navbar: toggler + collapsed menu ---- */
+/* The toggler uses <i class="fas fa-map"> + "Menu" text — make it visible */
+html.dark .navbar-toggler {
+  color: #e2e8f0 !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+html.dark .navbar-toggler i {
+  color: #e2e8f0 !important;
+}
+
+/* Collapsed menu panel on mobile gets a dark background */
+html.dark .navbar-collapse.show,
+html.dark .navbar-collapse.collapsing {
+  background: #0f172a !important;
+  border-radius: 0.6rem;
+  padding: 0.5rem 1rem 0.75rem;
+  margin-top: 0.35rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+html.dark .navbar-collapse.show .nav-link,
+html.dark .navbar-collapse.collapsing .nav-link {
+  color: #cbd5e1 !important;
+}
+
+html.dark .navbar-collapse.show .nav-link:hover,
+html.dark .navbar-collapse.show .nav-item.active .nav-link {
+  color: #818cf8 !important;
+}
